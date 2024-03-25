@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+
+  post "message" => "messages#create"
+
+  mount ActionCable.server, at: '/cable'
 end
